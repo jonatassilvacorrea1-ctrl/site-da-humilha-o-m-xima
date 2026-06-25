@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Senhorita Lafaiette,</h1>
+        <p>será que admiradores secretos ainda são aceitos hoje em dia ou são considerados muito estranhos? Talvez apenas esquisitões ainda façam essas coisas. Enfim...</p>
+        <p>Eu não acredito em gostar de uma pessoa sem conhecê-la primeiro. Por isso acho que a palavra "admirador" combina bem, entende? Sou uma pessoa que te admira e que gostaria de te conhecer melhor.</p>
+        <p>Pelo pouco que conheço de você, me sinto muito instigado a descobrir mais. E essas poucas coisas já me encantam bastante.</p>
+        <p>Já que o esquisitão aqui não pode fazer uma carta normal, pensei em um formato mais criativo. Considere como um jogo. Se aceitares, a cada semana esse site vai atualizar com uma nova brincadeira e, quando acertares, recebes uma informação. Se recusares, eu finjo que isso nunca aconteceu. Pode ser?</p>
+        <p>                             Com admiração, do seu admirador secreto — ou esquisitão secreto, como preferir chamar.</p>
+    </div>
+
+    <div class="card">
+        <h1>Vai participar do jogo?</h1>
+        <form action="/resposta" method="POST">
+            <button name="escolha" value="sim">Bora, néh..., pode ser bacana.</button>
+            <button name="escolha" value="nao">Não, obrigada, seu esquisitão.</button>
+        </form>
+    </div>
+    
+</body>
+</html>

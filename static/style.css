@@ -1,0 +1,94 @@
+/* Configuração geral do fundo e alinhamento */
+body {
+    background: linear-gradient(135deg, #ffe5ec 0%, #f0e6ff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h1 {
+    color: #4c1d95;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Textos da carta */
+p {
+    color: #4a4a4a;
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+/* O Container/Card principal */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    margin: 15px 0;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(76, 29, 149, 0.1);
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Organização dos botões dentro do card */
+.card form, .card div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botões padrões e links */
+button, a button {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(109, 40, 217, 0.2);
+    width: 100%; /* Faz o botão ocupar a largura disponível para ficar uniforme */
+    max-width: 350px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(109, 40, 217, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Botões bloqueados (Página Inicial) */
+.apagado {
+    background: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none !important;
+}
+
+#porquinho {
+    position: absolute;
+    width: 100px;
+    cursor: pointer;
+}
