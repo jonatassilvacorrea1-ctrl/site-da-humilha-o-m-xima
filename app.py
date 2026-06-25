@@ -18,12 +18,16 @@ def aceitou():
 def recusou():
     return render_template('recusou.html')
 
-@app.route("/resposta", methods=['POST'])
+ultimas_respostas = []
+
+@app.route("/resposta", methods=["POST"])
 def resposta():
-    escolha = request.form['escolha']
-    
-    with open('resposta.txt', 'a', encoding='utf-8') as arquivo:
-        arquivo.write(escolha + "\n")
+
+    escolha = request.form["escolha"]
+
+    ultimas_respostas.append(escolha)
+
+    print(ultimas_respostas)
 
     if escolha == 'sim':
         return aceitou()
@@ -37,6 +41,30 @@ def porquinho():
 @app.route('/porquinho/agradecimento')
 def porquinhoagradecimento():
     return render_template('porquinho_mensagem.html')
+
+@app.route('/charada')
+def charada():
+    return render_template('charadas.html')
+
+@app.route('/palavras')
+def termo():
+    return render_template('termo.html')
+
+@app.route('/criancinha')
+def jogodavelha():
+    return render_template('jogo_da_velha.html')
+
+@app.route('/cesarecleopatra')
+def cifradecesar():
+    return render_template('cifra_de_cesar.html')
+
+@app.route('/perdiascoisas')
+def procurarobjetos():
+    return render_template('procurar_objetos.html')
+
+@app.route('/aceita-por-favorzinho')
+def conviteencontro():
+    return render_template('convite_encontro.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

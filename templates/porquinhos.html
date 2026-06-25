@@ -8,16 +8,16 @@
 </head>
 <body>
     
-    <h2>Caça aos Porquinhos</h2>
-    <p>Meus porquinhos-da-índia fugiram da gaiola. Pode me ajudar pegando os 10?</p>
-
-    <p id="contador">
-        Encontrados: 0/10
-    </p>
+    <div class="game-header">
+        <h2>🐹 Caça aos Porquinhos</h2>
+        <p>Meus porquinhos-da-índia fugiram! Pode me ajudar a recuperar os 10 fujões?</p>
+        <span id="contador">Encontrados: 0/10</span>
+    </div>
 
     <img
-        id = "porquinho"
-        src="{{url_for('static', filename = 'images/porquinho.webp')}}"
+        id="porquinho"
+        src="{{url_for('static', filename='images/porquinho.webp')}}"
+        alt="Porquinho"
     >
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
