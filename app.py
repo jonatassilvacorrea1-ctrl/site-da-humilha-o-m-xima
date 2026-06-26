@@ -46,6 +46,10 @@ def porquinhoagradecimento():
 def charada():
     return render_template('charadas.html')
 
+@app.route('/charada/charada')
+def charadacharada():
+    return render_template('charadas_mensagem.html')
+
 @app.route('/palavras')
 def termo():
     return render_template('termo.html')

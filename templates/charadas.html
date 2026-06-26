@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,5 +7,26 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+
+    <div class="card">
+        <div class="game-intro">
+            <h2>Desafio das charadas</h2>
+            <p class="subtitle">Vamos ver se o seu raciocínio tá em dia.</p>
+        </div>
+        
+        <div class="game-content">
+            <p id="charada"></p>
+            <p id="mensagem"></p>
+            
+            <input 
+                type="text" 
+                id="resposta" 
+                placeholder="Digite seu palpite e aperte Enter">
+                
+            <button id="butao" style="display: none;">Próxima charada</button>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename = 'script_charada.js')}}"></script>
 </body>
 </html>

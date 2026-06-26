@@ -1,8 +1,6 @@
-/* Importação de fontes elegantes */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&display=swap');
 
 body {
-    /* Fundo em degradê com tons de rosa-bebe e rosa-pastel bem suave */
     background: linear-gradient(135deg, #fff0f3 0%, #ffe3e8 100%); 
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
@@ -13,19 +11,17 @@ body {
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
-    color: #3a2226; /* Texto em tom marrom-rosado bem escuro para melhor leitura */
+    color: #3a2226;
 }
 
-/* Títulos principais */
 h1, h2 {
     font-family: 'Playfair Display', serif;
-    color: #c9184a; /* Rosa Pink marcante e elegante */
+    color: #c9184a;
     font-size: 2rem;
     margin-bottom: 25px;
     font-weight: 600;
 }
 
-/* O corpo do texto da carta */
 p {
     font-family: 'Playfair Display', serif;
     font-size: 1.15rem;
@@ -35,7 +31,6 @@ p {
     margin-bottom: 20px;
 }
 
-/* Container elegante (Card) */
 .card {
     background: #ffffff;
     max-width: 650px;
@@ -43,13 +38,11 @@ p {
     padding: 45px 35px;
     margin: 15px 0;
     border-radius: 24px;
-    /* Sombra suave com tonalidade rosada */
     box-shadow: 0 10px 35px rgba(201, 24, 74, 0.05); 
-    border: 1px solid #ffccd5; /* Borda rosa fina */
+    border: 1px solid #ffccd5;
     box-sizing: border-box;
 }
 
-/* Caixa interna para organizar os botões verticalmente e idênticos */
 .button-group {
     display: flex;
     flex-direction: column;
@@ -59,7 +52,6 @@ p {
     margin-top: 25px;
 }
 
-/* Botão principal / Botão que avança (Rosa Magenta/Pink vibrante) */
 button, .btn-link {
     display: inline-block;
     font-family: 'Poppins', sans-serif;
@@ -90,7 +82,6 @@ button:active, .btn-link:active {
     transform: translateY(1px);
 }
 
-/* Botão secundário / Recusa (Rosa claro pastel) */
 button[value="nao"] {
     background: #fff0f3;
     color: #c9184a;
@@ -104,9 +95,8 @@ button[value="nao"]:hover {
     box-shadow: 0 4px 10px rgba(201, 24, 74, 0.05);
 }
 
-/* Botões do Jogo Bloqueados (Página Inicial) */
 .apagado {
-    background: #f3eae8 !important; /* Cinza levemente rosado */
+    background: #f3eae8 !important;
     color: #bfa3a7 !important;
     border: 1px solid #e5d5d7 !important;
     border-bottom: none !important;
@@ -117,7 +107,6 @@ button[value="nao"]:hover {
     opacity: 0.7;
 }
 
-/* Remove estilos padrões de links que envolvem botões */
 a {
     text-decoration: none;
     width: 100%;
@@ -125,11 +114,6 @@ a {
     justify-content: center;
 }
 
-/* ==========================================
-   ESTILOS ESPECÍFICOS DO JOGO DOS PORQUINHOS 
-   ========================================== */
-
-/* Barra Superior Fixa para o Placar do Jogo */
 .game-header {
     position: fixed;
     top: 20px;
@@ -162,7 +146,6 @@ a {
     margin: 0;
 }
 
-/* Estilo do Contador de Pontos */
 #contador {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -176,7 +159,6 @@ a {
     border: 1px solid #ffccd5;
 }
 
-/* O Porquinho da Índia */
 #porquinho {
     position: absolute;
     width: 85px;
@@ -186,4 +168,65 @@ a {
     transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     user-select: none;
     -webkit-user-drag: none;
+}
+
+.game-intro {
+    text-align: center;
+    border-bottom: 2px dashed #ffccd5;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #805b61;
+    text-align: center;
+}
+
+#charada {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    color: #c9184a;
+    margin: 20px 0;
+}
+
+#mensagem {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 500;
+    min-height: 24px; /* Evita que o layout pule quando a mensagem aparece */
+}
+
+/* Estilização charmosa para o campo de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 16px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border: 2px solid #ffccd5;
+    border-radius: 12px;
+    background-color: #fff0f3;
+    color: #3a2226;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Efeito de foco iluminado no input */
+input[type="text"]:focus {
+    border-color: #ff4d6d;
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 77, 109, 0.2);
+}
+
+/* Ajuste fino para alinhar o conteúdo do jogo */
+.game-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
