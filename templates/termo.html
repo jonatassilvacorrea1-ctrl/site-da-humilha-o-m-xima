@@ -7,5 +7,21 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+    <h1>Termo do Esquisito</h1>
+    <p id="score">Score: 0/5</p>
+    <div id="tabuleiro"></div>
+    <div>
+        <p id="mensagem"></p>
+        <button id="botao" style="display: none;"></button>
+        <a href="/palavras/palavras">
+            <button id="botao2" style="display: none;">?????</button>
+        </a>
+    </div>
+
+    <script>
+        const palavraCorreta = "{{ palavra }}";
+    </script>
+    
+    <script src="{{url_for('static', filename = 'script_termo.js')}}"></script>
 </body>
 </html>

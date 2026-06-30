@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainha das Palavras</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="card">
+        <h1>Nossa, que bacana, acertou várias!</h1>
+        <p>Menina muito esperta mesmo.</p>
+        <p>Bora fazer diferente hoje? O que tu achas tu falar algo pra mim? Tipo, qualquer coisa, algo sobre ti, um xingamento pra mim. Qualquer coisa que vier à mente.</p>
+        <div class="button-group">
+            <form action="/resposta/termo" method="POST" class="button-group">
+                {% if aviso %}
+                    <p style="color: green;">
+                        {{ aviso }}
+                    </p>
+                {% endif %}
+                <input
+                    type="text"
+                    name="escolha_termo"
+                    placeholder="Escreve qualquer coisa :)">
+
+                    <button type="submit">
+                        Enviar
+                    </button>
+            </form>
+            <a href="/">
+                <button>Voltar para página inicial</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

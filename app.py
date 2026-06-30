@@ -1,3 +1,5 @@
+import random
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -52,7 +54,38 @@ def charadacharada():
 
 @app.route('/palavras')
 def termo():
-    return render_template('termo.html')
+    with open("palavras.txt", encoding="utf-8") as arquivo:
+        palavras = arquivo.read().splitlines()
+    palavra = random.choice(palavras)
+    return render_template('termo.html', palavra=palavra)
+
+@app.route("/nova-palavra")
+def nova_palavra():
+    with open("palavras.txt", encoding="utf-8") as arquivo:
+        palavras = arquivo.read().splitlines()
+    return {"palavra": random.choice(palavras)}
+
+@app.route('/palavras/palavras')
+def termoMensagem():
+    return render_template('termo_mensagem.html')
+
+ultimas_mensagens = []
+textos = [
+    "Recebi sua mensagem 😊\nSe quiser mandar outra, eu aceito também."
+    "Anotado, manda mais uma pra eu anotar mais."
+    "Entendo, to aceitando mais mensagens."
+    "Que incrivel, ótimo comentário, pode mandar mais."
+]
+
+@app.route("/resposta/termo", methods=["POST"])
+def respostaTermo():
+    mensagem = request.form["escolha_termo"]
+
+    ultimas_mensagens.append(mensagem)
+
+    print(ultimas_mensagens)
+
+    return render_template("termo_mensagem.html", aviso = random.choice(textos))
 
 @app.route('/criancinha')
 def jogodavelha():

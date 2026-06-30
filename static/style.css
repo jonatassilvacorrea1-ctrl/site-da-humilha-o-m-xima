@@ -230,3 +230,74 @@ input[type="text"]:focus {
     align-items: center;
     width: 100%;
 }
+
+/* ==========================================
+   ESTILIZAÇÃO DO TABULEIRO DO TERMO 
+   ========================================== */
+
+#tabuleiro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaçamento vertical entre as linhas */
+    margin: 20px 0;
+}
+
+.linha {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Espaçamento horizontal entre as letras */
+}
+
+/* Sobrescreve e embeleza o input específico das letras do jogo */
+input.letra {
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #ffccd5;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #3a2226;
+    box-shadow: 0 4px 6px rgba(201, 24, 74, 0.03);
+    transition: all 0.2s ease;
+}
+
+/* Quando o quadradinho está selecionado para digitar */
+input.letra:focus {
+    border-color: #ff4d6d;
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 77, 109, 0.3);
+    transform: scale(1.05);
+}
+
+/* Estado desabilitado (linhas futuras ou passadas) */
+input.letra:disabled {
+    background-color: #fff0f3;
+    border-color: #ffe3e8;
+    color: #a08084;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Classes de feedback elegante para o JavaScript aplicar */
+input.letra.correta {
+    background-color: #52b788 !important; /* Verde suave */
+    border-color: #40916c !important;
+    color: white !important;
+}
+
+input.letra.deslocada {
+    background-color: #fee440 !important; /* Amarelo aconchegante */
+    border-color: #f7b500 !important;
+    color: #3a2226 !important;
+}
+
+input.letra.errada {
+    background-color: #bfa3a7 !important; /* Cinza sofisticado */
+    border-color: #a08084 !important;
+    color: white !important;
+}
