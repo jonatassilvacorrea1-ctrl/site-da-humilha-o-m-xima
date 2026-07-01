@@ -34,25 +34,30 @@ function pintarLetras(palavra_correta, linha_atual) {
     }
     const letras_corretas = palavra_correta.split("");
     const letras_restantes = palavra_correta.split("");
-    const verdes = [false, false, false, false, false]
+    const verdes = [false, false, false, false, false];
 
+    // 1ª passada: Verdes
     for (let n = 0; n < colunas; n++) {
         if (letras_digitadas[n] === letras_corretas[n]) {
             abscissas[linha_atual][n].classList.add("correta");
+            abscissas[linha_atual][n].style.setProperty('background-color', '#52b788', 'important');
             letras_restantes[n] = null;
             verdes[n] = true;
         }
     }
 
+    // 2ª passada: Amarelas e Cinzas
     for (let n = 0; n < colunas; n++) {
         if (!verdes[n]) {
             const indice = letras_restantes.indexOf(letras_digitadas[n]);
             if (indice !== -1) {
                 abscissas[linha_atual][n].classList.add("deslocada");
+                abscissas[linha_atual][n].style.setProperty('background-color', '#fee440', 'important');
                 letras_restantes[indice] = null;
             }
             else {
                 abscissas[linha_atual][n].classList.add("errada");
+                abscissas[linha_atual][n].style.setProperty('background-color', '#bfa3a7', 'important');
             }
         }
     }
@@ -158,6 +163,7 @@ botao.addEventListener("click", function() {
         for (let i = 0; i < colunas; i++) {
             abscissas[o][i].value = "";
             abscissas[o][i].classList.remove("correta", "deslocada", "errada");
+            abscissas[o][i].style.backgroundColor = "#ffffff";
         }
     }
     alterarEstadoLinha(linha_atual, false)
