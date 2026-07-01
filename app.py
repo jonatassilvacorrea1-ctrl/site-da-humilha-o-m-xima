@@ -22,10 +22,10 @@ def recusou():
 
 ultimas_respostas = []
 
-@app.route("/resposta", methods=["POST"])
+@app.route('/resposta', methods=['POST'])
 def resposta():
 
-    escolha = request.form["escolha"]
+    escolha = request.form['escolha']
 
     ultimas_respostas.append(escolha)
 
@@ -54,16 +54,20 @@ def charadacharada():
 
 @app.route('/palavras')
 def termo():
-    with open("palavras.txt", encoding="utf-8") as arquivo:
+    with open('palavras.txt', encoding='utf-8') as arquivo:
         palavras = arquivo.read().splitlines()
     palavra = random.choice(palavras)
     return render_template('termo.html', palavra=palavra)
 
-@app.route("/nova-palavra")
+@app.route('/nova-palavra')
 def nova_palavra():
-    with open("palavras.txt", encoding="utf-8") as arquivo:
+    with open('palavras.txt', encoding='utf-8') as arquivo:
         palavras = arquivo.read().splitlines()
-    return {"palavra": random.choice(palavras)}
+    return {'palavra': random.choice(palavras)}
+
+@app.route('/palavras/help')
+def termoHelp():
+    return render_template('termo_help.html')
 
 @app.route('/palavras/palavras')
 def termoMensagem():
@@ -71,21 +75,21 @@ def termoMensagem():
 
 ultimas_mensagens = []
 textos = [
-    "Recebi sua mensagem 😊\nSe quiser mandar outra, eu aceito também."
-    "Anotado, manda mais uma pra eu anotar mais."
-    "Entendo, to aceitando mais mensagens."
-    "Que incrivel, ótimo comentário, pode mandar mais."
+    'Recebi sua mensagem 😊\nSe quiser mandar outra, eu aceito também.'
+    'Anotado, manda mais uma pra eu anotar mais.'
+    'Entendo, to aceitando mais mensagens.'
+    'Que incrivel, ótimo comentário, pode mandar mais.'
 ]
 
-@app.route("/resposta/termo", methods=["POST"])
+@app.route('/resposta/termo', methods=['POST'])
 def respostaTermo():
-    mensagem = request.form["escolha_termo"]
+    mensagem = request.form['escolha_termo']
 
     ultimas_mensagens.append(mensagem)
 
     print(ultimas_mensagens)
 
-    return render_template("termo_mensagem.html", aviso = random.choice(textos))
+    return render_template('termo_mensagem.html', aviso = random.choice(textos))
 
 @app.route('/criancinha')
 def jogodavelha():

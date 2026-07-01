@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Jogar - Termo do Esquisito</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="card">
+        <h1>Como Jogar?</h1>
+        <p class="subtitle">Descubra a palavra certa em 5 tentativas. Cada tentativa deve ser uma palavra válida de 5 letras.</p>
+        
+        <hr class="divisor">
+
+        <h3>As cores são as suas pistas:</h3>
+        
+        <div class="exemplo-container">
+            <div class="linha-exemplo">
+                <span class="letra-exemplo correta">C</span>
+                <span class="letra-exemplo">A</span>
+                <span class="letra-exemplo">S</span>
+                <span class="letra-exemplo">A</span>
+                <span class="letra-exemplo">S</span>
+            </div>
+            <p class="exemplo-texto">A letra <strong>C</strong> faz parte da palavra e está na posição certa.</p>
+        </div>
+
+        <div class="exemplo-container">
+            <div class="linha-exemplo">
+                <span class="letra-exemplo">E</span>
+                <span class="letra-exemplo deslocada">L</span>
+                <span class="letra-exemplo">A</span>
+                <span class="letra-exemplo">S</span>
+                <span class="letra-exemplo">M</span>
+            </div>
+            <p class="exemplo-texto">A letra <strong>L</strong> faz parte da palavra, mas está na posição errada.</p>
+        </div>
+
+        <div class="exemplo-container">
+            <div class="linha-exemplo">
+                <span class="letra-exemplo">M</span>
+                <span class="letra-exemplo">U</span>
+                <span class="letra-exemplo errada">D</span>
+                <span class="letra-exemplo">O</span>
+                <span class="letra-exemplo">S</span>
+            </div>
+            <p class="exemplo-texto">A letra <strong>D</strong> não faz parte da palavra de jeito nenhum.</p>
+        </div>
+
+        <hr class="divisor">
+
+        <blockquote>
+            "Palavras, palavras, palavras... Só o que nos resta é adivinhar."
+        </blockquote>
+
+        <div class="button-group">
+            <a href="/palavras">
+                <button>Bora Jogar!</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
