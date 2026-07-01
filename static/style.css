@@ -288,16 +288,22 @@ input.letra.correta {
     background-color: #52b788 !important; /* Verde suave */
     border-color: #40916c !important;
     color: white !important;
+    -webkit-text-fill-color: white !important; /* Força a cor do texto no iOS/Safari */
+    opacity: 1 !important; /* Impede o telemóvel de deixar a caixa transparente */
 }
 
 input.letra.deslocada {
     background-color: #fee440 !important; /* Amarelo aconchegante */
     border-color: #f7b500 !important;
     color: #3a2226 !important;
+    -webkit-text-fill-color: #3a2226 !important;
+    opacity: 1 !important;
 }
 
 input.letra.errada {
     background-color: #bfa3a7 !important; /* Cinza sofisticado */
     border-color: #a08084 !important;
     color: white !important;
+    -webkit-text-fill-color: white !important;
+    opacity: 1 !important;
 }

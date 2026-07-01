@@ -27,24 +27,8 @@ const charadas = [
         resposta: "toalha"
     },
     {
-        pergunta: "O que é o que é: anda sem pés e voa sem asas?",
-        resposta: "tempo"
-    },
-    {
-        pergunta: "O que é o que é: enche uma casa, mas não ocupa espaço?",
-        resposta: "luz"
-    },
-    {
         pergunta: "O que é o que é: sobe quando a chuva desce?",
         resposta: "guarda chuva"
-    },
-    {
-        pergunta: "O que é o que é: está sempre no chão, mas nunca se suja?",
-        resposta: "sombra"
-    },
-    {
-        pergunta: "O que é o que é: tem muitas chaves, mas nenhuma abre porta?",
-        resposta: "piano"
     },
     {
         pergunta: "O que é o que é: quanto mais se tira, maior fica?",
@@ -63,16 +47,8 @@ const charadas = [
         resposta: "livro"
     },
     {
-        pergunta: "O que é o que é: entra na água, mas não se molha?",
-        resposta: "reflexo"
-    },
-    {
         pergunta: "O que é o que é: quanto mais cresce, menos se vê?",
         resposta: "escuridao"
-    },
-    {
-        pergunta: "O que é o que é: pode viajar o mundo inteiro sem sair do canto?",
-        resposta: "selo"
     },
     {
         pergunta: "O que é o que é: faz barulho quando passa, mas ninguém consegue pegar?",
@@ -81,10 +57,6 @@ const charadas = [
     {
         pergunta: "O que é o que é: nasce grande e morre pequena?",
         resposta: "vela"
-    },
-    {
-        pergunta: "O que é o que é: tem braços, mas não abraça?",
-        resposta: "cadeira"
     },
     {
         pergunta: "O que é o que é: está sempre à frente, mas nunca pode ser alcançado?",
@@ -147,7 +119,7 @@ const charadas = [
         resposta: "farao"
     },
     {
-        pergunta: "Quem interpretou esse sonho?",
+        pergunta: "Quem interpretou o sonho de faraó?",
         resposta: "jose"
     },
     {
@@ -185,10 +157,6 @@ const charadas = [
     {
         pergunta: "O que é o que é: vive no céu, mas nunca vai para a igreja?",
         resposta: "nuvem"
-    },
-    {
-        pergunta: "O que é o que é: quanto mais quente, mais fresco parece?",
-        resposta: "sorvete"
     },
     {
         pergunta: "O que é o que é: todo mundo quebra antes de usar?",
