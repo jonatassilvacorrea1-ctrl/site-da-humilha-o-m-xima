@@ -12,7 +12,7 @@ let acertos = 0;
 
 function alterarEstadoLinha(linha, habilitado) {
     for (let u = 0; u < colunas; u++) {
-        abscissas[linha][u].disabled = !habilitado;
+        abscissas[linha][u].readOnly = !habilitado;;
     }
 }
 
@@ -137,7 +137,7 @@ for (let o = 0; o < linhas; o++) {
        })
        letra.classList.add("letra");
        if (o > 0) {
-        letra.disabled = true;
+        letra.readOnly = true;
        }
        ordenadas.push(letra);
        linhadiv.appendChild(letra);
