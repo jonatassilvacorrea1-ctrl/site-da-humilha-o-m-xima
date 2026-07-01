@@ -29,9 +29,11 @@ function lerPalavraDigitada() {
 function pintarLetras(palavra_correta, linha_atual) {
     const letras_digitadas = [];
     for (let h = 0; h < colunas; h++) {
-        const letra_inserida = abscissas[linha_atual][h].value;
+        const letra_inserida = abscissas[linha_atual][h].value.toLowerCase();
         letras_digitadas.push(letra_inserida);
     }
+
+    palavra_correta = palavra_correta.toLowerCase();
     const letras_corretas = palavra_correta.split("");
     const letras_restantes = palavra_correta.split("");
     const verdes = [false, false, false, false, false];
