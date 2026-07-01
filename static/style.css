@@ -387,3 +387,49 @@ blockquote {
     -webkit-text-fill-color: white !important;
     opacity: 1 !important;
 }
+
+/* ==========================================
+   SUPER CORREÇÃO DE CORES (Telemóvel & PC)
+   ========================================== */
+
+/* 1. Regra Geral para qualquer elemento */
+.correta {
+    background-color: #52b788 !important;
+    border-color: #40916c !important;
+    color: #ffffff !important;
+}
+.deslocada {
+    background-color: #fee440 !important;
+    border-color: #f7b500 !important;
+    color: #3a2226 !important;
+}
+.errada {
+    background-color: #bfa3a7 !important;
+    border-color: #a08084 !important;
+    color: #ffffff !important;
+}
+
+/* 2. Forçar a barra especificamente para os INPUTS do jogo (mesmo quando desativados no telemóvel) */
+input.letra.correta, input.letra.correta:disabled {
+    background: #52b788 !important;
+    background-color: #52b788 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+input.letra.deslocada, input.letra.deslocada:disabled {
+    background: #fee440 !important;
+    background-color: #fee440 !important;
+    color: #3a2226 !important;
+    -webkit-text-fill-color: #3a2226 !important;
+    opacity: 1 !important;
+}
+
+input.letra.errada, input.letra.errada:disabled {
+    background: #bfa3a7 !important;
+    background-color: #bfa3a7 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
