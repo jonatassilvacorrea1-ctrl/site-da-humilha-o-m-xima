@@ -201,6 +201,7 @@ resposta.addEventListener("keydown", function(event) {
 });
 
 botao.addEventListener("click", function () {
+    charadas.pop(charadas[atual])
     atual = Math.floor(Math.random() * charadas.length);
     if (acertos == 5) {
         botao2.style.display = "block";
