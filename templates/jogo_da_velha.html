@@ -7,5 +7,16 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+    <h1>Jogo da <s>Mais Experiente</s> Velha</h1>
+    <p id="score">Score: 0/3</p>
+    <p id="turno">Seu Turno</p>
+    <div id="tabuleiro_da_velha"></div>
+    <p id="mensagem"></p>
+    <button id="botao" style="display: none;">Jogar novamente</button>
+    <a href="/criancinha/mensagem">
+        <button id="botao2" style="display: none;">?????</button>
+    </a>
+
+    <script src="{{url_for('static', filename='script_jogo_da_velha.js')}}"></script>
 </body>
 </html>

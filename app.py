@@ -95,6 +95,10 @@ def respostaTermo():
 def jogodavelha():
     return render_template('jogo_da_velha.html')
 
+@app.route('/criancinha/mensagem')
+def jogoDaVelhaMensagem():
+    return render_template('jogo_da_velha_mensagem.html')
+
 @app.route('/cesarecleopatra')
 def cifradecesar():
     return render_template('cifra_de_cesar.html')

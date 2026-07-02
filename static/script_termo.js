@@ -1,4 +1,4 @@
-const tabuleiro = document.getElementById("tabuleiro");
+const tabuleiro_termo = document.getElementById("tabuleiro_termo");
 const mensagem = document.getElementById("mensagem");
 const score = document.getElementById("score");
 const botao = document.getElementById("botao");
@@ -8,6 +8,7 @@ const linhas = 6;
 const colunas = 5;
 let linha_atual = 0;
 let palavra_correta = palavraCorreta;
+palavra_correta = palavra_correta.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 let acertos = 0;
 
 function alterarEstadoLinha(linha, habilitado) {
@@ -38,7 +39,6 @@ function pintarLetras(palavra_correta, linha_atual) {
     const letras_restantes = palavra_correta.split("");
     const verdes = [false, false, false, false, false];
 
-    // 1ª passada: Verdes
     for (let n = 0; n < colunas; n++) {
         if (letras_digitadas[n] === letras_corretas[n]) {
             abscissas[linha_atual][n].classList.add("correta");
@@ -48,7 +48,6 @@ function pintarLetras(palavra_correta, linha_atual) {
         }
     }
 
-    // 2ª passada: Amarelas e Cinzas
     for (let n = 0; n < colunas; n++) {
         if (!verdes[n]) {
             const indice = letras_restantes.indexOf(letras_digitadas[n]);
@@ -150,7 +149,7 @@ for (let o = 0; o < linhas; o++) {
        linhadiv.appendChild(letra);
     }
     abscissas.push(ordenadas);
-    tabuleiro.appendChild(linhadiv);
+    tabuleiro_termo.appendChild(linhadiv);
 }
 
 botao.addEventListener("click", function() {
@@ -159,6 +158,7 @@ botao.addEventListener("click", function() {
     .then(dados => {
         palavra_correta = dados.palavra;
     });
+    palavra_correta = palavra_correta.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     mensagem.style.display = "none";
     botao.style.display = "none";
     for (let o = 0; o < linhas; o++) {
