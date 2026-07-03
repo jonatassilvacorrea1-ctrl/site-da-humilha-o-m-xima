@@ -103,6 +103,10 @@ def jogoDaVelhaMensagem():
 def cifradecesar():
     return render_template('cifra_de_cesar.html')
 
+@app.route('/cesarecleopatra/mensagem')
+def cifraDeCesarMensagem():
+    return render_template('cifra_de_cesar_mensagem.html')
+
 @app.route('/perdiascoisas')
 def procurarobjetos():
     return render_template('procurar_objetos.html')

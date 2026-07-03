@@ -7,5 +7,63 @@
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+
+    <div class="card">
+        
+        <div id="conteudo-jogo">
+            <h1>⚔️ Cifra de César</h1>
+            
+            <p>Pois bem, eu queria rever SAO pela centésima vez...</p>
+            <p>Aí o inteligentão foi entrar na conta, néh...</p>
+            <p>Descobri que o idiota do passado resolveu criptografar a senha mudando as letras de lugar.</p>
+            <p>Agora nem eu lembro qual era! 🤡</p>
+            
+            <div class="login-box">
+                <p><strong>Usuário:</strong> esquisitao123</p>
+                <p><strong>Senha criptografada:</strong></p>
+                <div id="senhacriptografada"></div>
+            </div>
+
+            <p>A única coisa que eu lembro é que esse enigma <strong>pula algumas letras do alfabeto para frente</strong>... e o número de pulos tem tudo a ver com a sigla do meu anime favorito (S.A.O.). Seria a quantidade de letras da sigla? 🤔</p>
+
+            <div class="button-group">
+                <input 
+                    type="text"
+                    id="senhadigitada"
+                    placeholder="Digite a senha decifrada e aperte Enter..."
+                    autocomplete="off"
+                >
+                <p id="mensagem"></p>
+                
+                <div style="display: flex; gap: 10px; justify-content: center; width: 100%;">
+                    <button type="button" id="btn-ajuda" class="btn-dica">💡 Pedir dica</button>
+                    <button type="button" id="btn-alfabeto" class="btn-alfabeto">📋 Ver alfabeto</button>
+                </div>
+                
+                <div id="container-alfabeto" class="alfabeto-box">
+                    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                </div>
+
+                <div id="container-dica">
+                    <p style="font-size: 0.9rem; font-family: 'Poppins', sans-serif; color: #805b61; text-align: center; margin-top: 15px; font-style: italic;">
+                        <strong>Dica do esquisitão:</strong> Se a sigla tem 3 letras, significa que cada letra da senha original pulou 3 posições para frente. Para descobrir a senha real, basta pegar as letras ali de cima e voltar 3 posições no alfabeto!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="conteudo-sucesso" style="display: none; flex-direction: column; align-items: center; width: 100%;">
+            <h1>✨ Sistema Liberado!</h1>
+            <p style="text-align: center;">Senha correta inserida com sucesso. Obrigado por salvar a maratona!</p>
+            <div class="button-group">
+                <a href="/cesarecleopatra/mensagem">
+                    <button>Obrigado! ➔</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{url_for('static', filename='script_cifra_de_cesar.js')}}"></script>
 </body>
 </html>

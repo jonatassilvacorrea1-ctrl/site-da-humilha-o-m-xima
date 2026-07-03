@@ -464,3 +464,129 @@ input.letra.errada, input.letra.errada:disabled {
         transform: scale(1);
     }
 }
+
+.login-box {
+    background-color: #fffafb;
+    border: 1px dashed #ffccd5;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 350px;
+    text-align: center;
+}
+
+.login-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 5px 0;
+    color: #805b61;
+}
+
+/* Destaque para a senha criptografada misteriosa */
+#senhacriptografada {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #c9184a;
+    letter-spacing: 3px;
+    background: #ffe3e8;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+/* Campo de input de senha da cifra */
+#senhadigitada {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: 2px solid #ffccd5;
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: #4a3538;
+    background-color: #fffafb;
+    margin: 15px 0;
+}
+
+#senhadigitada:focus {
+    border-color: #ff4d6d;
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.15);
+    background-color: #ffffff;
+}
+
+/* Mensagem de acerto/erro */
+#mensagem {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    min-height: 24px;
+}
+
+.btn-dica {
+    background: transparent !important;
+    color: #c9184a !important;
+    border: 1px dashed #ffccd5 !important;
+    border-bottom: 1px dashed #ffccd5 !important;
+    padding: 8px 15px !important;
+    font-size: 0.85rem !important;
+    max-width: 180px !important;
+    box-shadow: none !important;
+    margin-top: 10px;
+}
+
+.btn-dica:hover {
+    background: #fff0f3 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Container da dica que começa escondido */
+#container-dica {
+    display: none; /* Começa oculto */
+    width: 100%;
+}
+
+/* Botão para o alfabeto */
+.btn-alfabeto {
+    background: transparent !important;
+    color: #c9184a !important;
+    border: 1px dashed #ffccd5 !important;
+    border-bottom: 1px dashed #ffccd5 !important;
+    padding: 8px 15px !important;
+    font-size: 0.85rem !important;
+    max-width: 180px !important;
+    box-shadow: none !important;
+    margin-top: 5px;
+}
+
+.btn-alfabeto:hover {
+    background: #fff0f3 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Caixa contendo o alfabeto */
+.alfabeto-box {
+    display: none; /* Começa escondido */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #c9184a;
+    background: #fff0f3;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ffccd5;
+    letter-spacing: 4px; /* Dá um espaço legal entre as letras do alfabeto */
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
