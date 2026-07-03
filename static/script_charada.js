@@ -27,20 +27,8 @@ const charadas = [
         resposta: "toalha"
     },
     {
-        pergunta: "O que é o que é: sobe quando a chuva desce?",
-        resposta: "guarda chuva"
-    },
-    {
         pergunta: "O que é o que é: quanto mais se tira, maior fica?",
         resposta: "buraco"
-    },
-    {
-        pergunta: "O que é o que é: vive correndo, mas nunca sai do lugar?",
-        resposta: "relogio"
-    },
-    {
-        pergunta: "O que é o que é: pode passar diante do sol sem fazer sombra?",
-        resposta: "vento"
     },
     {
         pergunta: "O que é o que é: é cheio de letras, mas não sabe ler?",
@@ -201,7 +189,7 @@ resposta.addEventListener("keydown", function(event) {
 });
 
 botao.addEventListener("click", function () {
-    charadas.pop(charadas[atual])
+    charadas.splice(atual, 1);
     atual = Math.floor(Math.random() * charadas.length);
     if (acertos == 5) {
         botao2.style.display = "block";
