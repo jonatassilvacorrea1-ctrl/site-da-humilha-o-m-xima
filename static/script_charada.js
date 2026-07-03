@@ -39,10 +39,6 @@ const charadas = [
         resposta: "escuridao"
     },
     {
-        pergunta: "O que é o que é: faz barulho quando passa, mas ninguém consegue pegar?",
-        resposta: "vento"
-    },
-    {
         pergunta: "O que é o que é: nasce grande e morre pequena?",
         resposta: "vela"
     },
@@ -140,7 +136,7 @@ const charadas = [
     },
     {
         pergunta: "O que é o que é: tem boca, mas não fala?",
-        resposta: "forno"
+        resposta: "fogão"
     },
     {
         pergunta: "O que é o que é: vive no céu, mas nunca vai para a igreja?",
@@ -150,10 +146,6 @@ const charadas = [
         pergunta: "O que é o que é: todo mundo quebra antes de usar?",
         resposta: "ovo"
     },
-    {
-        pergunta: "O que é o que é: pode ser contado, mas nunca termina?",
-        resposta: "numeros"
-    }
 ]
 
 let atual = Math.floor(Math.random() * charadas.length);

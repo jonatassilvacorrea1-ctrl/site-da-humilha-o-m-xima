@@ -66,8 +66,8 @@ function pintarLetras(palavra_correta, linha_atual) {
 
 function acertou() {
     acertos++
-    score.textContent = `Score: ${acertos}/5`;
-    if (acertos === 5) {
+    score.textContent = `Score: ${acertos}/3`;
+    if (acertos === 3) {
         botao2.style.display = "block";
     }
     mensagem.style.color = "green";
