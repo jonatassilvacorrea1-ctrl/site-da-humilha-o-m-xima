@@ -75,9 +75,9 @@ def termoMensagem():
 
 ultimas_mensagens = []
 textos = [
-    'Recebi sua mensagem 😊\nSe quiser mandar outra, eu aceito também.'
-    'Anotado, manda mais uma pra eu anotar mais.'
-    'Entendo, to aceitando mais mensagens.'
+    'Recebi sua mensagem 😊\nSe quiser mandar outra, eu aceito também.',
+    'Anotado, manda mais uma pra eu anotar mais.',
+    'Entendo, to aceitando mais mensagens.',
     'Que incrivel, ótimo comentário, pode mandar mais.'
 ]
 
