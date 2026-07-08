@@ -22,6 +22,7 @@ function moverporquinho() {
 
 porquinho.addEventListener("click", function() {
     encontrados++;
+    console.log(`${encontrados}/10`)
     contador.textContent = `Encontrados: ${encontrados}/10`;
     
     porquinho.style.transform = "scale(0.5)";

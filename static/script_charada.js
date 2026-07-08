@@ -159,6 +159,7 @@ function verificarresposta() {
 
     if (texto_resposta == charadas[atual].resposta) {
         acertos++
+        console.log(`${acertos}/5`)
         score.textContent = `Score: ${acertos}/5`
         mensagem.textContent = mensagens[Math.floor(Math.random() * mensagens.length)];
         pergunta.style.display = "none";
