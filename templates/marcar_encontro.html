@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espero que eu não fique plantado lá</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+    <div class="card">
+        <h1>📅 Agendar nosso Encontro</h1>
+        <p style="text-align: center;">Para você ter total segurança, escolha o dia e o que faremos. O local eu te passo depois!</p>
+
+        <form action="/resposta/marcar" method="POST" class="button-group">
+
+            <div class="campo">
+                <label for="data">Escolha o melhor dia:</label>
+                <input type="date" id="data" name="data">
+            </div>
+
+            <div class="campo">
+                <label for="horario">Escolha o horário:</label>
+                <select id="horario" name="horario">
+                    <option value="">Selecione um horário...</option>
+                    <option value="14:00">À tarde (14:00)</option>
+                    <option value="17:00">Final de tarde (17:00)</option>
+                    <option value="19:00">À noite (19:00)</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>O que vamos fazer?</label>
+                <div class="radio-group">
+                    <label class="radio-option" for="praca">
+                        <input type="radio" name="atividade" value="Praça" id="praca">
+                        <span>🌳 Passear na Praça</span>
+                    </label>
+                    <label class="radio-option" for="sorvete">
+                        <input type="radio" name="atividade" value="Sorvete" id="sorvete">
+                        <span>🍦 Tomar um Sorvete</span>
+                    </label>
+                    <label class="radio-option" for="tapioquinha">
+                        <input type="radio" name="atividade" value="Tapioquinha" id="tapioquinha">
+                        <span>🥟 Comer uma Tapioquinha</span>
+                    </label>
+                    <label class="radio-option" for="cafe">
+                        <input type="radio" name="atividade" value="Café" id="cafe">
+                        <span>☕ Ir a um Café</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" style="margin-top: 15px;">Confirmar Encontro 🌹</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

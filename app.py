@@ -92,7 +92,7 @@ def respostaTermo():
     return render_template('termo_mensagem.html', aviso = random.choice(textos))
 
 @app.route('/criancinha')
-def jogodavelha():
+def jogoDaVelha():
     return render_template('jogo_da_velha.html')
 
 @app.route('/criancinha/mensagem')
@@ -100,20 +100,71 @@ def jogoDaVelhaMensagem():
     return render_template('jogo_da_velha_mensagem.html')
 
 @app.route('/cesarecleopatra')
-def cifradecesar():
+def cifraDeCesar():
     return render_template('cifra_de_cesar.html')
 
 @app.route('/cesarecleopatra/mensagem')
 def cifraDeCesarMensagem():
     return render_template('cifra_de_cesar_mensagem.html')
 
-@app.route('/perdiascoisas')
-def procurarobjetos():
-    return render_template('procurar_objetos.html')
-
 @app.route('/aceita-por-favorzinho')
-def conviteencontro():
-    return render_template('convite_encontro.html')
+def conviteEncontro():
+    return render_template('convite_encontro_falso.html')
+
+@app.route('/aceita-por-favorzinho/verdade')
+def conviteEncontroVerdade():
+    return render_template('convite_encontro_verdadeiro.html')
+
+@app.route('/aceita-por-favorzinho/verdade/marcar')
+def marcar():
+    return render_template('marcar_encontro.html')
+
+@app.route('/aceita-por-favorzinho/verdade/sem-encontro')
+def semEncontro():
+    return render_template('sem_encontro.html')
+
+@app.route('/aceita-por-favorzinho/verdade/esquecer-tudo')
+def esquecerTudo():
+    return render_template('esquecer_tudo.html')
+
+ultimas_respostas_encontro = []
+
+@app.route('/resposta/encontro', methods=['POST'])
+def respostaEncontro():
+
+    escolha = request.form['escolha']
+
+    ultimas_respostas_encontro.append(escolha)
+
+    print(ultimas_respostas_encontro)
+
+    if escolha == 'encontro':
+        return marcar()
+    elif escolha == 'sem encontro':
+        return semEncontro()
+    elif escolha == 'esquecer tudo':
+        return esquecerTudo()
+    
+ultimos_encontros = []
+
+@app.route("/resposta/marcar", methods=["POST"])
+def respostaMarcar():
+
+    data = request.form["data"]
+    horario = request.form["horario"]
+    atividade = request.form["atividade"]
+
+    encontro = {
+        "data": data,
+        "horario": horario,
+        "atividade": atividade
+    }
+
+    ultimos_encontros.append(encontro)
+
+    print(ultimos_encontros)
+
+    return render_template('encontro_marcado.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

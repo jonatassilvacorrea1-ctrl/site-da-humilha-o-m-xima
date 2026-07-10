@@ -136,7 +136,7 @@ const charadas = [
     },
     {
         pergunta: "O que é o que é: tem boca, mas não fala?",
-        resposta: "fogão"
+        resposta: "fogao"
     },
     {
         pergunta: "O que é o que é: vive no céu, mas nunca vai para a igreja?",

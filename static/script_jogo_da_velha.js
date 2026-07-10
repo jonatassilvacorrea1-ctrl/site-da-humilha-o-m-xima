@@ -96,7 +96,7 @@ function ganhou() {
     if (vitorias == 3) {
         botao2.style.display = "block";
     }
-    mensagem.textContent = "QUe incrível, você ganhou!";
+    mensagem.textContent = "Que incrível, você ganhou!";
     botao.style.display = "block";
 }
 

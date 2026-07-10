@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prometo que não sou um psciopata.</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+    <div class="card">
+        <p>Na última página não dava para falar não neh... mas nunca que eu deixaria alguém sem escolha.</p>
+        <p>E cara, deve ser estranho receber um convite para um encontro de um esquisitão que tu nem sabes quem é (ou sabe, sei lá).</p>
+        <p>Enfim... tenho três opções:</p>
+        <p>1 - Tu vai num encontro comigo e lá tu descobre quem eu sou.</p>
+        <p>2 - Tu não vai no encontro, mas eu me revelo.</p>
+        <p>3 - Tu não vai no encontro, eu não me revelo e a gente finje que isso nunca aconteceu (eu gosto dessa opção).</p>
+        <p>Então, tu escolhes:</p>
+        
+        <div class="button-group">
+            <form action="/resposta/encontro" method="POST" class="button-group"> 
+                <button name="escolha" value="encontro">Encontro.</button>
+                <button name="escolha" value="sem encontro">Sem encontro.</button>
+                <button name="escolha" value="esquecer tudo">Esquecer tudo.</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
