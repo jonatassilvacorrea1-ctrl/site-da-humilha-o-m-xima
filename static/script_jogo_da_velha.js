@@ -1,3 +1,5 @@
+alert("Senhorita, só avisando que tem coisa depois de três vitórias (tem coisa também depois de acertar cinco charadas). Mas só to falando neh.")
+
 const tabuleiro_da_velha = document.getElementById("tabuleiro_da_velha");
 const turno = document.getElementById("turno");
 const mensagem = document.getElementById("mensagem");
@@ -6,13 +8,19 @@ const botao2 = document.getElementById("botao2");
 const score = document.getElementById("score");
 const abscissas = [];
 let preenchidas = 0;
-let vitorias = 0;
+let vitorias = Number(localStorage.getItem("vitorias")) || 0;
 let turno_jogador = true;
 let casas_preenchidas = [
     ["", "", ""],
     ["", "", ""],
     ["", "", ""]
 ];
+
+localStorage.setItem("vitorias", vitorias)
+score.textContent = `Score: ${vitorias}/3`
+if (vitorias == 3) {
+    botao2.style.display = "block";
+}
 
 function marcarX(linha, coluna) {
     const x = document.createElement("img");
@@ -92,6 +100,7 @@ function perdeu(){
 
 function ganhou() {
     vitorias++;
+    localStorage.setItem("vitorias", vitorias)
     score.textContent = `Score: ${vitorias}/3`
     if (vitorias == 3) {
         botao2.style.display = "block";

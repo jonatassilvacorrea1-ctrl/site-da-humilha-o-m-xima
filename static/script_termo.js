@@ -9,7 +9,14 @@ const colunas = 5;
 let linha_atual = 0;
 let palavra_correta = palavraCorreta;
 palavra_correta = palavra_correta.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-let acertos = 0;
+let acertos = Number(localStorage.getItem("acertos")) || 0;
+localStorage.setItem("acertos", acertos);
+
+score.textContent = `Score: ${acertos}/3`;
+
+if (acertos >= 3) {
+    botao2.style.display = "block";
+}
 
 function alterarEstadoLinha(linha, habilitado) {
     for (let u = 0; u < colunas; u++) {
@@ -66,6 +73,7 @@ function pintarLetras(palavra_correta, linha_atual) {
 
 function acertou() {
     acertos++
+    localStorage.setItem("acertos", acertos);
     score.textContent = `Score: ${acertos}/3`;
     if (acertos === 3) {
         botao2.style.display = "block";
@@ -156,9 +164,12 @@ botao.addEventListener("click", function() {
     fetch("/nova-palavra")
     .then(resposta => resposta.json())
     .then(dados => {
-        palavra_correta = dados.palavra;
+        palavra_correta = dados.palavra
+        .toLowerCase()
+        .trim()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, "");
     });
-    palavra_correta = palavra_correta.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     mensagem.style.display = "none";
     botao.style.display = "none";
     for (let o = 0; o < linhas; o++) {

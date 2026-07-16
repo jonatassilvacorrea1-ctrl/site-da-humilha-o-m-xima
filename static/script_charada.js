@@ -1,4 +1,5 @@
-let acertos = 0;
+let acertos = Number(localStorage.getItem("acertos")) || 0;
+localStorage.setItem("acertos", acertos);
 const botao = document.getElementById("butao");
 const botao2 = document.getElementById("botao2");
 const score = document.getElementById("score");
@@ -12,6 +13,11 @@ const mensagens = [
     "Até que tu é boa nesse negócio de advinhação.",
     "Uhul, certou!"
 ]
+
+score.textContent = `Score: ${acertos}/5`;
+if (acertos == 5) {
+    botao2.style.display = "block";
+}
 
 const charadas = [
     {
@@ -158,8 +164,8 @@ function verificarresposta() {
     let texto_resposta = resposta.value.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
     if (texto_resposta == charadas[atual].resposta) {
-        acertos++
-        console.log(`${acertos}/5`)
+        acertos++;
+        localStorage.setItem("acertos", acertos);
         score.textContent = `Score: ${acertos}/5`
         mensagem.textContent = mensagens[Math.floor(Math.random() * mensagens.length)];
         pergunta.style.display = "none";
